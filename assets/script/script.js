@@ -62,7 +62,7 @@ class Subscriber extends User {
   #groups;
   #canMonetize;
 
-  constructor (id, name, userName, email, pages, groups, canMonetize) {
+  constructor(id, name, userName, email, pages, groups, canMonetize) {
     super(id, name, userName, email);
     this.#pages = pages;
     this.#groups = groups;
@@ -83,29 +83,36 @@ class Subscriber extends User {
 
   getInfo() {
     return (`ID: ${this.id}, \nName: ${this.name}, \nUsername: ${this.userName},
-  \nemail: ${this. email}, \nPages: ${this.pages}, \nGroups: ${this.groups},  
+  \nemail: ${this.email}, \nPages: ${this.pages}, \nGroups: ${this.groups},  
   \nCan monetize: ${this.canMonetize}`);
   }
 }
 
 const sub1 = new Subscriber(6969, 'Johnathon', 'jjohn', 'jj@email.com', 10, 5, false);
-console.log(sub1.getInfo().replace(/,/g, '<br>'));
 
 imgUpload.addEventListener('change', () => {
   file = imgUpload.files[0];
   const fileName = file.name;
-  fileResult.innerText = fileName;
-  imgUpload.src = reader.result;
-  reader.readAsDataURL(file);
+  const extension = fileName.split('.').pop(); // extension comes after .
+  const allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+  if (allowedExtensions.includes(extension)) { // file type validation via extension
+    fileResult.innerText = fileName;
+    imgUpload.src = reader.result;
+    reader.readAsDataURL(file);
+  } else {
+    postArea.style.border = '1px solid #ff2846';
+    infoMsg.innerHTML = 
+    (`Invalid file. Please upload ${allowedExtensions.join(', ')} files`);
+    postArea.appendChild(infoMsg);
+  }
 });
 
-reader.addEventListener('load', () => {
-  console.log('im working');
+reader.addEventListener('load', () => { //  on load, creates post img element
   currentImg = document.createElement('img');
   currentImg.src = reader.result;
 });
 
-function addPost(input) {
+function addPost(input) { //  function to add post
   let date = new Date();
   let div = document.createElement('div');
   let postInfo = document.createElement('div');
@@ -114,7 +121,6 @@ function addPost(input) {
   let userInfo = document.createElement('p');
   userInfo.classList.add('flex');
   let img = document.createElement('img');
-  console.log(img);
   img.src = './assets/img/profile.JPG';
   img.classList.add('flex');
   userInfo.appendChild(img);
@@ -147,13 +153,11 @@ postBtn.addEventListener('click', () => {
     if (input.toString().length >= 1 || fileResult.innerHTML != '') {
       postArea.style.border = '';
       infoMsg.innerHTML = '';
-      console.log(input);
       addPost(input);
     } else {
       postArea.style.border = '1px solid #ff2846';
       infoMsg.innerHTML = 'Invalid Input, you cannot post Nothing!';
       postArea.appendChild(infoMsg);
-      console.log('Invalid input');
     }
 
   } catch (err) {
