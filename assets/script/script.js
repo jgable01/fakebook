@@ -101,8 +101,8 @@ imgUpload.addEventListener('change', () => {
     reader.readAsDataURL(file);
   } else {
     postArea.style.border = '1px solid #ff2846';
-    infoMsg.innerHTML = 
-    (`Invalid file. Please upload ${allowedExtensions.join(', ')} files`);
+    infoMsg.innerHTML =
+      (`Invalid file. Please upload ${allowedExtensions.join(', ')} files`);
     postArea.appendChild(infoMsg);
   }
 });

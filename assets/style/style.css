@@ -59,7 +59,7 @@ header .profile img {
   margin: 8px 0px;
 }
 
-.header-nav { 
+.header-nav {
   font-size: 0px;
 }
 
@@ -74,7 +74,7 @@ header .header-nav nav li:hover {
   color: #5c9df3;
 }
 
-header .header-nav nav li + li {
+header .header-nav nav li+li {
   margin-left: 18px;
 }
 
