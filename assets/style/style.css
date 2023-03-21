@@ -11,6 +11,7 @@
   --app-blue-hover: #4896fc;
   --app-red: #ff3c57;
   --app-red-hover: #ff2846;
+  --app-text: #e0d9d9;
 }
 
 body {
@@ -36,7 +37,8 @@ header {
   background-color: var(--app-header-bg);
   height: 50px;
   line-height: 50px;
-  color: #fff;
+  color: var(--app-text);
+
 }
 
 header .flex {
@@ -85,9 +87,14 @@ header .header-nav nav li + li {
 /* Post area                                     */
 /* - - - - - - - - - - - - - - - - - - - - - - - */
 
-.content {
+.grid {
   display: grid;
   place-content: center;
+}
+
+.content {
+  height: auto;
+  gap: 15px;
 }
 
 .postBtn {
@@ -106,9 +113,9 @@ header .header-nav nav li + li {
 .postArea #post {
   background-color: transparent;
   width: 550px;
-  height: 175px;
+  height: 155px;
   resize: none;
-  color: #fff;
+  color: var(--app-text);
 }
 
 #imgUpload {
@@ -116,7 +123,7 @@ header .header-nav nav li + li {
 }
 
 .inputImg label {
-  color: #fff;
+  color: var(--app-text);
   cursor: pointer;
   padding: 8px;
   transition: 0.33s all ease-in-out;
@@ -124,6 +131,11 @@ header .header-nav nav li + li {
 
 .inputImg label:hover {
   color: var(--app-blue-hover);
+}
+
+.fileName {
+  display: inline;
+  color: var(--app-text);
 }
 
 .postArea button {
@@ -141,7 +153,40 @@ header .header-nav nav li + li {
   cursor: pointer;
 }
 
+.postBox {
+  height: auto;
+  min-height: 100px;
+  background-color: #f2f3f4;
+  color: #000;
+  width: 590px;
+}
+
+.postBox p {
+  padding: 5px 15px 15px 15px;
+}
+
+.postInfo {
+  justify-content: space-between;
+}
+
+.postInfo p {
+  padding: 15px;
+}
+
+.postInfo img {
+  border-radius: 100%;
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+
+.infoMsg {
+  color: var(--app-text);
+  padding: 5px;
+}
+
+
 
 /* - - - - - - - - - - - - - - - - - - - - - - - */
-/* End of post area                                    */
+/* End of post area                              */
 /* - - - - - - - - - - - - - - - - - - - - - - - */

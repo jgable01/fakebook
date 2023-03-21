@@ -30,26 +30,29 @@
         </nav>
       </div>
       <div class='profile'>
-        <img src='./assets/img/profile.JPG'>
+        <img src='./assets/img/profile.JPG' class="userImg">
       </div>
     </div>
   </header>
   <!-- End of header -->
   <!-- Body -->
-  <div class="container content">
+  <div class="grid">
     <div class="postArea">
-      <textarea name="postBox" id="post" placeholder="What's new, Josh"></textarea>
+      <textarea name="postBox" id="post" class="post" placeholder="What's new, Josh"></textarea>
       <div class="postBtn flex">
         <div class="inputImg">
-          <input type="file" id="imgUpload" accept="img/png, img/jpeg">
+          <input type="file" id="imgUpload" accept="img/png, img/jpeg" height="200">
           <label for="imgUpload"><i class="fa-regular fa-image"></i></label>
-          <p class="fileName"></p>
+          <p class="fileName flex"></p>
         </div>
         <div class="postBtn">
-          <button type="button">Post</button>
+          <button type="button" class="addPost">Post</button>
         </div>
       </div>
     </div>
+    <p class="infoMsg"></p>
+  </div>
+  <div class="container content grid">
   </div>
   <!-- End of body -->
 </body>
