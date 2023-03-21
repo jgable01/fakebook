@@ -12,8 +12,46 @@
 </head>
 
 <body>
-  <div class="container">
+  <!-- Header -->
+  <header>
+    <div class='container flex'>
+      <div class='header-title'>
+        <h1>Fakebook</h1>
+      </div>
+      <div class='header-nav'>
+        <nav>
+          <ul>
+            <li>Friends</li>
+            <li>Pages</li>
+            <li>Groups</li>
+            <li>My Ads</li>
+            <li>Settings</li>
+          </ul>
+        </nav>
+      </div>
+      <div class='profile'>
+        <img src='./assets/img/profile.JPG'>
+      </div>
+    </div>
+  </header>
+  <!-- End of header -->
+  <!-- Body -->
+  <div class="container content">
+    <div class="postArea">
+      <textarea name="postBox" id="post" placeholder="What's new, Josh"></textarea>
+      <div class="postBtn flex">
+        <div class="inputImg">
+          <input type="file" id="imgUpload" accept="img/png, img/jpeg">
+          <label for="imgUpload"><i class="fa-regular fa-image"></i></label>
+          <p class="fileName"></p>
+        </div>
+        <div class="postBtn">
+          <button type="button">Post</button>
+        </div>
+      </div>
+    </div>
   </div>
+  <!-- End of body -->
 </body>
 
 </html>

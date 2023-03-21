@@ -5,9 +5,10 @@
   --app-bg-blue: #3487f3;
   --app-bg-orange: #d47215;
   --app-bg-purple: #6a1fc0;
-  --app-bg-dark: #323235;
+  --app-bg-dark: #1c1c1c;
+  --app-header-bg: #282a31;
   --app-bg-green: #4dcc3c;
-  --app-blue-hover: #364ee6;
+  --app-blue-hover: #4896fc;
   --app-red: #ff3c57;
   --app-red-hover: #ff2846;
 }
@@ -21,6 +22,126 @@ body {
   margin-inline: auto;
   height: 100vh;
   display: flex;
-  justify-content: center;
 }
 
+.flex {
+  display: flex;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - */
+/* Header                                        */
+/* - - - - - - - - - - - - - - - - - - - - - - - */
+
+header {
+  background-color: var(--app-header-bg);
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+}
+
+header .flex {
+  justify-content: space-between;
+}
+
+header .header-title h1 {
+  color: #3487f3;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+header .profile img {
+  border-radius: 100%;
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+  margin: 8px 0px;
+}
+
+.header-nav { 
+  font-size: 0px;
+}
+
+header .header-nav nav li {
+  display: inline;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.33s ease-in-out;
+}
+
+header .header-nav nav li:hover {
+  color: #5c9df3;
+}
+
+header .header-nav nav li + li {
+  margin-left: 18px;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - */
+/* End of header                                 */
+/* - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - */
+/* Post area                                     */
+/* - - - - - - - - - - - - - - - - - - - - - - - */
+
+.content {
+  display: grid;
+  place-content: center;
+}
+
+.postBtn {
+  justify-content: space-between;
+}
+
+.postArea {
+  padding: 20px;
+  margin: 50px 0;
+  height: auto;
+  line-height: 50px;
+  background-color: var(--app-header-bg);
+  justify-content: space-between;
+}
+
+.postArea #post {
+  background-color: transparent;
+  width: 550px;
+  height: 175px;
+  resize: none;
+  color: #fff;
+}
+
+#imgUpload {
+  display: none;
+}
+
+.inputImg label {
+  color: #fff;
+  cursor: pointer;
+  padding: 8px;
+  transition: 0.33s all ease-in-out;
+}
+
+.inputImg label:hover {
+  color: var(--app-blue-hover);
+}
+
+.postArea button {
+  width: 75px;
+  height: 33px;
+  border-radius: 6px;
+  color: #fff;
+  background-color: #3487f3;
+  font-weight: 600;
+  transition: 0.33s all ease-in-out;
+}
+
+.postArea button:hover {
+  background-color: var(--app-blue-hover);
+  cursor: pointer;
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - */
+/* End of post area                                    */
+/* - - - - - - - - - - - - - - - - - - - - - - - */
