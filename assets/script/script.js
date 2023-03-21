@@ -18,8 +18,78 @@ const textArea = document.querySelector('.post');
 const postArea = document.querySelector('.postArea');
 const infoMsg = document.querySelector('.infoMsg');
 const reader = new FileReader();
-
+const userInfo = document.querySelector('.userInfo');
+const exitBtn = document.querySelector('.fa-xmark');
+const localUserInfo = document.createElement('p');
 let currentImg;
+
+class User {
+  #id;
+  #name;
+  #userName;
+  #email;
+
+  constructor(id, name, userName, email) {
+    this.#id = id;
+    this.#name = name;
+    this.#userName = userName;
+    this.#email = email;
+  }
+
+  get id() {
+    return this.#id;
+  }
+
+  get name() {
+    return this.#name;
+  }
+
+  get userName() {
+    return this.#userName;
+  }
+
+  get email() {
+    return this.#email;
+  }
+
+  getInfo() {
+    return this.id + this.name + this.userName + this.email;
+  }
+}
+
+class Subscriber extends User {
+  #pages;
+  #groups;
+  #canMonetize;
+
+  constructor (id, name, userName, email, pages, groups, canMonetize) {
+    super(id, name, userName, email);
+    this.#pages = pages;
+    this.#groups = groups;
+    this.#canMonetize = canMonetize;
+  }
+
+  get pages() {
+    return this.#pages;
+  }
+
+  get groups() {
+    return this.#groups;
+  }
+
+  get canMonetize() {
+    return this.#canMonetize;
+  }
+
+  getInfo() {
+    return (`ID: ${this.id}, \nName: ${this.name}, \nUsername: ${this.userName},
+  \nemail: ${this. email}, \nPages: ${this.pages}, \nGroups: ${this.groups},  
+  \nCan monetize: ${this.canMonetize}`);
+  }
+}
+
+const sub1 = new Subscriber(6969, 'Johnathon', 'jjohn', 'jj@email.com', 10, 5, false);
+console.log(sub1.getInfo().replace(/,/g, '<br>'));
 
 imgUpload.addEventListener('change', () => {
   file = imgUpload.files[0];
@@ -57,8 +127,8 @@ function addPost(input) {
   let pText = document.createElement('p');
   let pImg = document.createElement('p');
   pText.innerHTML = input;
-  if(fileResult.innerHTML != '') { 
-    pImg.appendChild(currentImg); 
+  if (fileResult.innerHTML != '') {
+    pImg.appendChild(currentImg);
     div.appendChild(pImg);
   }
   div.appendChild(pText);
@@ -79,17 +149,34 @@ postBtn.addEventListener('click', () => {
       infoMsg.innerHTML = '';
       console.log(input);
       addPost(input);
-    } else { 
+    } else {
       postArea.style.border = '1px solid #ff2846';
       infoMsg.innerHTML = 'Invalid Input, you cannot post Nothing!';
       postArea.appendChild(infoMsg);
-      console.log('Invalid input'); 
+      console.log('Invalid input');
     }
 
   } catch (err) {
     throw "Invalid input";
   }
 
+});
+
+profileIcon.addEventListener('click', () => {
+  localUserInfo.innerHTML = sub1.getInfo().replace(/,/g, '<br>')
+  localUserInfo.classList.add('infoLocalUser');
+  localUserInfo.classList.add('flex');
+  userInfo.classList.add('infotest');
+  userInfo.appendChild(localUserInfo);
+  userInfo.style.display = 'flex';
+  postArea.style.display = 'none';
+  content.style.display = 'none';
+});
+
+exitBtn.addEventListener('click', () => {
+  userInfo.style.display = 'none';
+  postArea.style.display = 'inline';
+  content.style.display = 'grid';
 });
 
 

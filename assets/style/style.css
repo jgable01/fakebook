@@ -108,6 +108,7 @@ header .header-nav nav li + li {
   line-height: 50px;
   background-color: var(--app-header-bg);
   justify-content: space-between;
+  border-radius: 6px;
 }
 
 .postArea #post {
@@ -159,10 +160,16 @@ header .header-nav nav li + li {
   background-color: #f2f3f4;
   color: #000;
   width: 590px;
+  border-radius: 6px;
 }
 
 .postBox p {
   padding: 5px 15px 15px 15px;
+  border-radius: 6px;
+}
+
+.postBox img {
+  border-radius: 6px;
 }
 
 .postInfo {
@@ -186,7 +193,48 @@ header .header-nav nav li + li {
 }
 
 
-
 /* - - - - - - - - - - - - - - - - - - - - - - - */
 /* End of post area                              */
 /* - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* - - - - - - - - - - - - - - - - - - - - - - - */
+/* User information                              */
+/* - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* - - - - - - - - - - - - - - - - - - - - - - - */
+/* End of user information                       */
+/* - - - - - - - - - - - - - - - - - - - - - - - */
+
+.userInfo {
+  color: var(--app-text);
+  height: 30vh;
+  margin-top: 28.3vh;
+  width: 450px;
+  padding: 20px;
+  background-color: var(--app-header-bg);
+  display: none;
+}
+
+.userInfo button {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: transparent;
+}
+
+.fa-xmark {
+  color: var(--app-red);
+  font-size: 1.5rem;
+}
+
+.fa-xmark:hover {
+  cursor: pointer;
+}
+
+.infoLocalUser {
+  align-items: center;
+  justify-content: center;
+  width: 450px;
+  height: 100%;
+}
