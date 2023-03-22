@@ -118,7 +118,6 @@ header .header-nav nav li+li {
   height: 155px;
   width: 23vw;
   min-width: 300px;
-  background-color: orange;
   resize: none;
   color: var(--app-text);
 }
