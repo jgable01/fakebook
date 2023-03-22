@@ -163,6 +163,10 @@ header .header-nav nav li+li {
   border-radius: 6px;
 }
 
+.postBox:last-child {
+  margin-bottom: 50px;
+}
+
 .postBox p {
   padding: 5px 15px 15px 15px;
   border-radius: 6px;
