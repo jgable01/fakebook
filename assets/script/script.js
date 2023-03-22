@@ -88,7 +88,8 @@ class Subscriber extends User {
   }
 }
 
-const sub1 = new Subscriber(6969, 'Johnathon', 'jjohn', 'jj@email.com', 10, 5, false);
+const sub1 = new Subscriber(6969, 'Josh', 'jgable', 'jj@email.com', 10, 5, false);
+textArea.placeholder += sub1.name;
 
 imgUpload.addEventListener('change', () => {
   file = imgUpload.files[0];
@@ -124,7 +125,7 @@ function addPost(input) { //  function to add post
   img.src = './assets/img/profile.JPG';
   img.classList.add('flex');
   userInfo.appendChild(img);
-  userInfo.innerHTML += 'Placeholder';
+  userInfo.innerHTML += sub1.userName;
   dateInfo.innerHTML = date.toDateString();
   postInfo.appendChild(userInfo);
   postInfo.appendChild(dateInfo);
