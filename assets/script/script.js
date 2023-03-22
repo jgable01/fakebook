@@ -109,6 +109,7 @@ imgUpload.addEventListener('change', () => {
 });
 
 reader.addEventListener('load', () => { //  on load, creates post img element
+
   currentImg = document.createElement('img');
   currentImg.src = reader.result;
 });
@@ -134,12 +135,12 @@ function addPost(input) { //  function to add post
   let pText = document.createElement('p');
   let pImg = document.createElement('p');
   pText.innerHTML = input;
+  div.appendChild(pText);
+  content.prepend(div);
   if (fileResult.innerHTML != '') {
     pImg.appendChild(currentImg);
     div.appendChild(pImg);
   }
-  div.appendChild(pText);
-  content.prepend(div);
   clearPost();
 }
 
