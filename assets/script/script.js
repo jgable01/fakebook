@@ -136,11 +136,11 @@ function addPost(input) { //  function to add post
   let pImg = document.createElement('p');
   pText.innerHTML = input;
   div.appendChild(pText);
-  content.prepend(div);
   if (fileResult.innerHTML != '') {
     pImg.appendChild(currentImg);
     div.appendChild(pImg);
   }
+  content.prepend(div);
   clearPost();
 }
 
